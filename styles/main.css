@@ -7,14 +7,16 @@ h1 {
     font-size: 1.5em;
 }
 
-.welcome-message {
+.welcome-message, .log-in {
     font-size: 1.5em;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 
-#enter_forest {
+
+#enter_forest, #feed-forest {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
@@ -24,3 +26,10 @@ h1 {
     display: inline-block;
     font-size: 16px;
 }
+
+/*https://wallpaperaccess.com/fairy-forest both backgrounds from here*/
+#index-page {
+    background: url("./img/index-page-background.jpeg");
+    background-size: cover;
+}
+    
