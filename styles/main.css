@@ -28,8 +28,19 @@ h1 {
 }
 
 /*https://wallpaperaccess.com/fairy-forest both backgrounds from here*/
-#index-page {
-    background: url("./images/index-page-background.jpeg");
+/*log in page*/
+.index-page {
+    background-image: url("images/index-page-background.jpeg");
     background-size: cover;
 }
-    
+/*input page*/
+.forest-gate {
+    background-image: url("images/forest-gate.jpeg");
+    background-size: cover;
+}
+ /*actual forest*/   
+.base-page {
+    background-image: url("./images/forest-background.jpeg");
+    background-size: cover;
+}
+
