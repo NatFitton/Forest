@@ -6,7 +6,7 @@ h1 {
     font-size: 1.5em;
 }
 
-.welcome-message, .log-in {
+.welcome-message, .log-in, .forest  {
     font-size: 1.5em;
     display: flex;
     justify-content: center;
