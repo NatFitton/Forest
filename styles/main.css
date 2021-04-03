@@ -65,7 +65,9 @@ h1 {
 .bg-img {
     /* The image used */
 
-    min-height: 380px;
+    /*can change min-height back, but when it was set to pixels it threw everything
+    off the bottom of the screen*/
+    min-height: 6em;
 
     /* Center and scale the image nicely */
     background-position: center;
