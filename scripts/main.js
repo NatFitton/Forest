@@ -54,14 +54,11 @@ function inputData() {
 
 //called on forest.html
 function getResult() {
-    //this function will access local storage and decide which images to show based on scores
-
-    document.getElementById("check_javascript").innerHTML = "<ul><li>Current sleep hours:" + localStorage.getItem("sleepKey") + "</li><li>Current steps taken:" + localStorage.getItem("stepsKey") + "</li><li>Current productivity minutes:" + localStorage.getItem("productivityKey") + "</li></ul>";
+    //this function will access local storage and decide which html file to show based on score
 
     //hard code weekly goal for now 
     //160,000 points will mean a fully developed forest
     //7619 steps + 8.5 hours sleep + 3.6 hours study to reach
-     
     //steps = steps score
     //sleep = sleep score * 60 * 15
     //study = study * 35
@@ -72,19 +69,23 @@ function getResult() {
     productivityScore = parseInt(localStorage.getItem("productivityKey"));
     //apply multiplier to score
     totalScore = (stepScore) + (sleepScore * 60 * 15) + (productivityScore * 35)
-
-    //use totalScore below this comment to create logic to determine which version of the forest we see
-    // if 0% <= score < 25% 
+    document.getElementById("check_javascript").innerHTML = "<ul><li>Current sleep hours:" + localStorage.getItem("sleepKey") + "</li><li>Current steps taken:" + localStorage.getItem("stepsKey") + "</li><li>Current productivity minutes:" + localStorage.getItem("productivityKey") + "</li><li>Current Score: " + totalScore + "</li></ul>";
+    
+    //use totalScore below this comment to determine which version of the forest we see
+    if (0 <= totalScore < 25){
         //show forest-1.html
-    // else 25% <= score < 50%
+        document.getElementById("forest-1").style.visibility = "visible";
+    } else if (25 <= totalScore < 50){
         //show forest-2.html
-    // else 50% <= score 75%
+        document.getElementById("forest-2").style.visibility = "visible";
+    } else if (50 <= totalScore < 75){
         //show forest-3.html
-    // else 75% <= score <= 100%
+        document.getElementById("forest-3").style.visibility = "visible";
+    } else if (75 <= totalScore <= 100){
         //show forest-4.html
-
+        document.getElementById("forest-4").style.visibility = "visible";
+    };
 };
-
 
 function initialise(){
 	if (document.getElementById("actual-forest")){ //we are showing the forest, need the functions that get the scores and display
