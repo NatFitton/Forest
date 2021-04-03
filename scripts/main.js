@@ -56,6 +56,8 @@ function inputData() {
 function getResult() {
     //this function will access local storage and decide which html file to show based on score
 
+    //hard code weekly goal for now 
+    //160,000 points will mean a fully developed forest
     //7619 steps + 8.5 hours sleep + 3.6 hours study to reach
     //steps = steps score
     //sleep = sleep score * 60 * 15
@@ -66,24 +68,20 @@ function getResult() {
     stepScore = parseInt(localStorage.getItem("stepsKey"));
     productivityScore = parseInt(localStorage.getItem("productivityKey"));
     //apply multiplier to score
-    totalScore = ((stepScore) + (sleepScore * 60 * 15) + (productivityScore * 35));
+    totalScore = (stepScore) + (sleepScore * 60 * 15) + (productivityScore * 35)
     document.getElementById("check_javascript").innerHTML = "<ul><li>Current sleep hours:" + localStorage.getItem("sleepKey") + "</li><li>Current steps taken:" + localStorage.getItem("stepsKey") + "</li><li>Current productivity minutes:" + localStorage.getItem("productivityKey") + "</li><li>Current Score: " + totalScore + "</li></ul>";
-     //hard code weekly goal for now 
-    //160,000 points will mean a fully developed forest
-    // 25% = 40,000
-    // 50% = 80,000
-    // 75% = 120,000
+    
     //use totalScore below this comment to determine which version of the forest we see
-    if (0 <= totalScore && totalScore <= 40000){
+    if (0 <= totalScore < 25){
         //show forest-1.html
         document.getElementById("forest-1").style.visibility = "visible";
-    } else if (40001 <= totalScore && totalScore <= 80000){
+    } else if (25 <= totalScore < 50){
         //show forest-2.html
         document.getElementById("forest-2").style.visibility = "visible";
-    } else if (80001 <= totalScore && totalScore <= 120000){
+    } else if (50 <= totalScore < 75){
         //show forest-3.html
         document.getElementById("forest-3").style.visibility = "visible";
-    } else {
+    } else if (75 <= totalScore <= 100){
         //show forest-4.html
         document.getElementById("forest-4").style.visibility = "visible";
     };
