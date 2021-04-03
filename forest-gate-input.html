@@ -18,14 +18,14 @@
         <h1>You made it to your Forest gates!</h1>
         <form action = "forest.html" method = "GET" id = "form" onsubmit="inputData()">
             <label for="sleep">How many hours did you sleep last night?</label><br>
-            <input type="number" id="sleep" name="sleep" placeholder="8" required><br>
+            <input type="number" min="0" id="sleep" name="sleep" placeholder="8" required><br>
             <label for="steps">How many steps did you take?</label><br>
-            <input type="number" id="steps" name="steps" placeholder="7500" required><br>
+            <input type="number" min="0" id="steps" name="steps" placeholder="7500" required><br>
             <label for="productivity">How many productive minutes did you clock?</label><br>
-            <input type="number" id="productivity" name="productivity" placeholder="120" required><br><br>
+            <input type="number" min="0" id="productivity" name="productivity" placeholder="120" required><br><br>
             <input type="submit" value="Feed your Forest" id="feed-forest">
         </form>
-        </div> 
+        </div>
     </section>
 </body>
 </html>
