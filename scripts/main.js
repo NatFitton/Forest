@@ -34,7 +34,7 @@ function getResult() {
         localStorage.setItem("productivityKey", newProductivity);
     };
 
-    console.log(localStorage)
+    document.getElementById("check_javascript").innerHTML = "<ul><li>Current sleep score:" + localStorage.getItem("sleepKey") + "</li><li>Current steps score:" + localStorage.getItem("stepsKey") + "</li><li>Current productivity score:" + localStorage.getItem("productivityKey") + "</li></ul>";
 };
 
 
