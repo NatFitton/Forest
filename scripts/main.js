@@ -1,3 +1,29 @@
+function validate() {
+    //check all inputs are not empty
+    var checkSleepEmpty = document.getElementById("sleep").value;
+    var checkStepsEmpty = document.getElementById("steps").value;
+    var checkProductivityEmpty = document.getElementById("productivity").value;
+    
+    //verify there is a sleep value
+    if (checkSleepEmpty === "")
+    {
+    alert("Please input a Value");
+    return false;
+    }
+    //verify there is a steps value
+    if (checkStepsEmpty === "")
+    {
+    alert("Please input a Value");
+    return false;
+    }
+    //verify there is a productivity value
+    if (checkProductivityEmpty === "")
+    {
+    alert("Please input a Value");
+    return false;
+    }
+};
+
 //get the values in from the form being input
 //called on forest-gate-input.html
 function inputData() {
@@ -6,7 +32,7 @@ function inputData() {
     inpProductivity = parseInt(document.getElementById("productivity").value);
 
      //if local storage is empty, set the values initially
-     if (localStorage.getItem("sleepKey") === null){
+     if (localStorage.getItem("sleepKey") === null) {
         localStorage.setItem("sleepKey", inpSleep);
         localStorage.setItem("stepsKey", inpSteps);
         localStorage.setItem("productivityKey", inpProductivity);
@@ -46,7 +72,9 @@ function getResult() {
 function initialise(){
 	if (document.getElementById("actual-forest")){ //we are showing the forest, need the functions that get the scores and display
 		getResult();
-	}
+	} else if (document.getElementById("feed-forest")){
+        document.getElementById("feed-forest").onclick.validate();
+    }
 }
 
 window.onload = initialise;
