@@ -54,14 +54,11 @@ function inputData() {
 
 //called on forest.html
 function getResult() {
-    //this function will access local storage and decide which images to show based on scores
-
-    document.getElementById("check_javascript").innerHTML = "<ul><li>Current sleep hours:" + localStorage.getItem("sleepKey") + "</li><li>Current steps taken:" + localStorage.getItem("stepsKey") + "</li><li>Current productivity minutes:" + localStorage.getItem("productivityKey") + "</li></ul>";
+    //this function will access local storage and decide which html file to show based on score
 
     //hard code weekly goal for now 
     //160,000 points will mean a fully developed forest
     //7619 steps + 8.5 hours sleep + 3.6 hours study to reach
-     
     //steps = steps score
     //sleep = sleep score * 60 * 15
     //study = study * 35
@@ -72,6 +69,7 @@ function getResult() {
     productivityScore = parseInt(localStorage.getItem("productivityKey"));
     //apply multiplier to score
     totalScore = (stepScore) + (sleepScore * 60 * 15) + (productivityScore * 35)
+    document.getElementById("check_javascript").innerHTML = "<ul><li>Current sleep hours:" + localStorage.getItem("sleepKey") + "</li><li>Current steps taken:" + localStorage.getItem("stepsKey") + "</li><li>Current productivity minutes:" + localStorage.getItem("productivityKey") + "</li><li>Current Score: " + totalScore + "</li></ul>";
 
     //use totalScore below this comment to create logic to determine which version of the forest we see
     // if 0% <= score < 25% 
