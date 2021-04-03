@@ -16,7 +16,7 @@
     <section id = "forest-gate">
         <div class = "log-in">
         <h1>You made it to your Forest gates!</h1>
-        <form name = "feeding-forest" action = "forest.html" method = "GET" class = "form" id = "form">
+        <form action = "forest.html" method = "GET" id = "form" onsubmit="return inputData()">
             <label for="sleep">How many hours did you sleep last night?</label><br>
             <input type="text" id="sleep" name="sleep" value="8"><br>
             <label for="steps">How many steps did you take?</label><br>

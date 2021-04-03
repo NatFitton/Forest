@@ -1,21 +1,12 @@
 //get the values in from the form being input
 //called on forest-gate-input.html
 function inputData() {
-    console.log("inside inputData");
-};
+    inpSleep = parseInt(document.getElementById("sleep").value);
+    inpSteps = parseInt(document.getElementById("steps").value);
+    inpProductivity = parseInt(document.getElementById("productivity").value);
 
-//called on forest.html
-function getResult() {
-    //this code will access local storage and decide which images to show 
-    console.log("inside getResult"); 
-    var currentUrl = window.location.href;
-    let params = (new URL(currentUrl)).searchParams;
-    inpSleep = parseInt(params.get('sleep'));
-    inpSteps = parseInt(params.get('steps'));
-    inpProductivity = parseInt(params.get('productivity'));
-
-    //if local storage is empty, set the values initially
-    if (localStorage.getItem("sleepKey") === null){
+     //if local storage is empty, set the values initially
+     if (localStorage.getItem("sleepKey") === null){
         localStorage.setItem("sleepKey", inpSleep);
         localStorage.setItem("stepsKey", inpSteps);
         localStorage.setItem("productivityKey", inpProductivity);
@@ -33,16 +24,27 @@ function getResult() {
         localStorage.setItem("stepsKey", newSteps);
         localStorage.setItem("productivityKey", newProductivity);
     };
+};
+
+//called on forest.html
+function getResult() {
+    //this function will access local storage and decide which images to show based on scores
 
     document.getElementById("check_javascript").innerHTML = "<ul><li>Current sleep score:" + localStorage.getItem("sleepKey") + "</li><li>Current steps score:" + localStorage.getItem("stepsKey") + "</li><li>Current productivity score:" + localStorage.getItem("productivityKey") + "</li></ul>";
+    
+    //add the scoring logic here to access certain images and innerHTML them to the forest page? 
+    sleepScore = localStorage.getItem("sleepKey");
+    stepScore = localStorage.getItem("stepsKey");
+    productivityScore = localStorage.getItem("productivityKey");
+
+    //hard code weekly goal 
+    //160,000 points will mean a fully developed forest
+
 };
 
 
 function initialise(){
-	if (document.getElementById("input-to-forest")){ //we are going to run this function when we are on the input page
-		inputData();
-	}
-	else if (document.getElementById("actual-forest")){ //we are showing the forest, need the functions that get the scores and display
+	if (document.getElementById("actual-forest")){ //we are showing the forest, need the functions that get the scores and display
 		getResult();
 	}
 }
