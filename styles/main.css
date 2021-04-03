@@ -63,3 +63,44 @@ h1 {
 }
 
 
+.bg-img {
+  /* The image used */
+
+  min-height: 380px;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  /* Needed to position the navbar */
+  position: relative;
+}
+
+/* Position the navbar container inside the image */
+.container {
+  position: absolute;
+  margin: 20px;
+  width: auto;
+}
+
+/* The navbar */
+.topnav {
+  overflow: hidden;
+  background-color: rgb(253, 234, 234);
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  color: #332d2d;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: rgb(211, 195, 195);
+  color: black;
+}
