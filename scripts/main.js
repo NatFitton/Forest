@@ -56,15 +56,32 @@ function inputData() {
 function getResult() {
     //this function will access local storage and decide which images to show based on scores
 
-    document.getElementById("check_javascript").innerHTML = "<ul><li>Current sleep score:" + localStorage.getItem("sleepKey") + "</li><li>Current steps score:" + localStorage.getItem("stepsKey") + "</li><li>Current productivity score:" + localStorage.getItem("productivityKey") + "</li></ul>";
-    
-    //add the scoring logic here to access certain images and innerHTML them to the forest page? 
-    sleepScore = localStorage.getItem("sleepKey");
-    stepScore = localStorage.getItem("stepsKey");
-    productivityScore = localStorage.getItem("productivityKey");
+    document.getElementById("check_javascript").innerHTML = "<ul><li>Current sleep hours:" + localStorage.getItem("sleepKey") + "</li><li>Current steps taken:" + localStorage.getItem("stepsKey") + "</li><li>Current productivity minutes:" + localStorage.getItem("productivityKey") + "</li></ul>";
 
-    //hard code weekly goal 
+    //hard code weekly goal for now 
     //160,000 points will mean a fully developed forest
+    //7619 steps + 8.5 hours sleep + 3.6 hours study to reach
+     
+    //steps = steps score
+    //sleep = sleep score * 60 * 15
+    //study = study * 35
+    //add the scoring logic here to access certain images and innerHTML them to the forest page? 
+    //get count from the local storage
+    sleepScore = parseInt(localStorage.getItem("sleepKey"));
+    stepScore = parseInt(localStorage.getItem("stepsKey"));
+    productivityScore = parseInt(localStorage.getItem("productivityKey"));
+    //apply multiplier to score
+    totalScore = (stepScore) + (sleepScore * 60 * 15) + (productivityScore * 35)
+
+    //use totalScore below this comment to create logic to determine which version of the forest we see
+    // if 0% <= score < 25% 
+        //show forest-1.html
+    // else 25% <= score < 50%
+        //show forest-2.html
+    // else 50% <= score 75%
+        //show forest-3.html
+    // else 75% <= score <= 100%
+        //show forest-4.html
 
 };
 
