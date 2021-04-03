@@ -70,22 +70,29 @@ function getResult() {
     document.getElementById("check_javascript").innerHTML = "<ul><li>Current sleep hours:" + localStorage.getItem("sleepKey") + "</li><li>Current steps taken:" + localStorage.getItem("stepsKey") + "</li><li>Current productivity minutes:" + localStorage.getItem("productivityKey") + "</li><li>Current Score: " + totalScore + "</li></ul>";
      //hard code weekly goal for now 
     //160,000 points will mean a fully developed forest
-    // 25% = 40,000
-    // 50% = 80,000
-    // 75% = 120,000
+    //160000 / 7 is roughly 22850 points to make seven stages of development
     //use totalScore below this comment to determine which version of the forest we see
-    if (0 <= totalScore && totalScore <= 40000){
+    if (0 <= totalScore && totalScore <= 22850){
         //show forest-1.html
-        document.getElementById("forest-1").style.visibility = "visible";
-    } else if (40001 <= totalScore && totalScore <= 80000){
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-1.html' id = 'forest-1'>Click here to view your forest!</a>"
+    } else if (22851 <= totalScore && totalScore <= 45700){
         //show forest-2.html
-        document.getElementById("forest-2").style.visibility = "visible";
-    } else if (80001 <= totalScore && totalScore <= 120000){
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-2.html' id = 'forest-2'>Click here to view your forest!</a>"
+    } else if (45701 <= totalScore && totalScore <= 68550){
         //show forest-3.html
-        document.getElementById("forest-3").style.visibility = "visible";
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-3.html' id = 'forest-3'>Click here to view your forest!</a>"
+    } else if (68551 <= totalScore && totalScore <= 91400){
+        //show forest-2.html
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-4.html' id = 'forest-4'>Click here to view your forest!</a>"
+    } else if (91401 <= totalScore && totalScore <= 114250){
+        //show forest-3.html
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-5.html' id = 'forest-5'>Click here to view your forest!</a>"
+    } else if (114251 <= totalScore && totalScore <= 137100){
+        //show forest-3.html
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-6.html' id = 'forest-6'>Click here to view your forest!</a>"
     } else {
         //show forest-4.html
-        document.getElementById("forest-4").style.visibility = "visible";
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-7.html' id = 'forest-7'>Click here to view your forest!</a>"
     };
 };
 
