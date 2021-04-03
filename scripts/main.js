@@ -89,16 +89,16 @@ function getResult() {
         //show forest-3.html
         document.getElementById("forest-link").innerHTML = "<a href = 'forest-3.html' id = 'forest-3'>Click here to view your forest!</a>"
     } else if (68551 <= totalScore && totalScore <= 91400){
-        //show forest-2.html
+        //show forest-4.html
         document.getElementById("forest-link").innerHTML = "<a href = 'forest-4.html' id = 'forest-4'>Click here to view your forest!</a>"
     } else if (91401 <= totalScore && totalScore <= 114250){
-        //show forest-3.html
+        //show forest-5.html
         document.getElementById("forest-link").innerHTML = "<a href = 'forest-5.html' id = 'forest-5'>Click here to view your forest!</a>"
     } else if (114251 <= totalScore && totalScore <= 137100){
-        //show forest-3.html
+        //show forest-6.html
         document.getElementById("forest-link").innerHTML = "<a href = 'forest-6.html' id = 'forest-6'>Click here to view your forest!</a>"
     } else {
-        //show forest-4.html
+        //show forest-7.html
         document.getElementById("forest-link").innerHTML = "<a href = 'forest-7.html' id = 'forest-7'>Click here to view your forest!</a>"
     };
 };
