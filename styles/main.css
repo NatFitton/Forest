@@ -18,6 +18,14 @@ h1 {
     padding-bottom: 5%;
 }
 
+.log-in input{
+    margin-left: 5%;
+}
+
+.log-in h1 {
+    text-align: center;
+}
+
 /*Navigation buttons from https://www.w3schools.com/css/css3_buttons.asp */
 #enter_forest, #feed-forest {
     background-color: #4CAF50; /* Green */
