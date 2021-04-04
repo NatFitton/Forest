@@ -139,3 +139,12 @@ h1 {
     color: white;
 }
 
+#quote-text {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.418);
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 0;
+    vertical-align: middle;
+    text-align: center;
+}

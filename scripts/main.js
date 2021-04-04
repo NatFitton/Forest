@@ -1,8 +1,19 @@
 function draw() {
-    const canvas = document.getElementById('canvas');
+    /*const canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
     ctx.fillStyle = 'green';
-    ctx.fillRect(10, 10, 150, 100);
+    ctx.fillRect(10, 10, 150, 100);*/
+    /*https://forum.freecodecamp.org/t/free-api-inspirational-quotes-json-with-code-examples/311373*/
+    fetch("https://type.fit/api/quotes")
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        var quote = data[Math.floor(Math.random() * 101)];
+        var value = quote["text"];
+        document.getElementById("quote").innerHTML = "<h1 id='quote-text'>" + value + "</h1>";
+    });
+    
 };
 
 function validate() {
