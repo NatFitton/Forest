@@ -18,7 +18,7 @@ h1 {
     padding-bottom: 5%;
 }
 
-/*Navigation buttons */
+/*Navigation buttons from https://www.w3schools.com/css/css3_buttons.asp */
 #enter_forest, #feed-forest {
     background-color: #4CAF50; /* Green */
     border: none;
