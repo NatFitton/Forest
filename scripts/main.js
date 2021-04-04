@@ -115,7 +115,8 @@ function getResult() {
 
 function reset(){
     //to reset localStorage
-    localStorage.clear()
+    localStorage.clear();
+    location.reload();
     document.getElementById("check_javascript").innerHTML = "<ul><li>Sleep hours: 0</li><li>Steps taken: 0</li><li>Productivity minutes: 0</li><li>Total score: 0</li></ul>";
 };
 
