@@ -1,3 +1,10 @@
+function draw() {  
+    const canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'green';
+    ctx.fillRect(10, 10, 150, 100);
+}; 
+
 function validate() {
     //check all inputs are not empty
     var checkSleepEmpty = document.getElementById("sleep").value;
@@ -56,8 +63,6 @@ function inputData() {
 function getResult() {
     //this function will access local storage and decide which html file to show based on score
 
-    //hard code weekly goal for now 
-    //160,000 points will mean a fully developed forest
     //7619 steps + 8.5 hours sleep + 3.6 hours study to reach
     //steps = steps score
     //sleep = sleep score * 60 * 15
@@ -68,22 +73,33 @@ function getResult() {
     stepScore = parseInt(localStorage.getItem("stepsKey"));
     productivityScore = parseInt(localStorage.getItem("productivityKey"));
     //apply multiplier to score
-    totalScore = (stepScore) + (sleepScore * 60 * 15) + (productivityScore * 35)
+    totalScore = ((stepScore) + (sleepScore * 60 * 15) + (productivityScore * 35));
     document.getElementById("check_javascript").innerHTML = "<ul><li>Current sleep hours:" + localStorage.getItem("sleepKey") + "</li><li>Current steps taken:" + localStorage.getItem("stepsKey") + "</li><li>Current productivity minutes:" + localStorage.getItem("productivityKey") + "</li><li>Current Score: " + totalScore + "</li></ul>";
-    
+     //hard code weekly goal for now 
+    //160,000 points will mean a fully developed forest
+    //160000 / 7 is roughly 22850 points to make seven stages of development
     //use totalScore below this comment to determine which version of the forest we see
-    if (0 <= totalScore < 25){
+    if (0 <= totalScore && totalScore <= 22850){
         //show forest-1.html
-        document.getElementById("forest-1").style.visibility = "visible";
-    } else if (25 <= totalScore < 50){
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-1.html' id = 'forest-1'>Click here to view your forest!</a>"
+    } else if (22851 <= totalScore && totalScore <= 45700){
         //show forest-2.html
-        document.getElementById("forest-2").style.visibility = "visible";
-    } else if (50 <= totalScore < 75){
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-2.html' id = 'forest-2'>Click here to view your forest!</a>"
+    } else if (45701 <= totalScore && totalScore <= 68550){
         //show forest-3.html
-        document.getElementById("forest-3").style.visibility = "visible";
-    } else if (75 <= totalScore <= 100){
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-3.html' id = 'forest-3'>Click here to view your forest!</a>"
+    } else if (68551 <= totalScore && totalScore <= 91400){
         //show forest-4.html
-        document.getElementById("forest-4").style.visibility = "visible";
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-4.html' id = 'forest-4'>Click here to view your forest!</a>"
+    } else if (91401 <= totalScore && totalScore <= 114250){
+        //show forest-5.html
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-5.html' id = 'forest-5'>Click here to view your forest!</a>"
+    } else if (114251 <= totalScore && totalScore <= 137100){
+        //show forest-6.html
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-6.html' id = 'forest-6'>Click here to view your forest!</a>"
+    } else {
+        //show forest-7.html
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-7.html' id = 'forest-7'>Click here to view your forest!</a>"
     };
 };
 
