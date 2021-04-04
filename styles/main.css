@@ -26,11 +26,49 @@ h1 {
     text-align: center;
 }
 
+.forest-link {
+    background-color: rgb(119, 71, 71);
+    text-decoration: none;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color:white;
+    text-transform: capitalize;
+    width: 70%;
+    margin-left: 14%;
+}
+
+.forest-link:hover {
+    color: #587759;
+    background-color: rgb(3, 3, 3);
+}
+
 /*Navigation buttons from https://www.w3schools.com/css/css3_buttons.asp */
-#enter_forest, #feed-forest {
-    background-color: #4CAF50; /* Green */
+#enter_forest, #feed-forest, #reset {
+    background-color: #587759; /* Green */
     border: none;
     color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#reset {
+    margin-top: 10%;
+}
+
+#reset:hover{
+    background-color: red;
+    color: black;
+}
+
+#enter_forest:hover, #feed-forest:hover {
+    color: #587759; /* Green */
+    border: none;
+    background-color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -76,13 +114,13 @@ h1 {
 /* The navbar */
 .topnav {
     overflow: hidden;
-    background-color: rgb(253, 234, 234);
+    background-color: rgb(119, 71, 71);
 }
 
 /* Navbar links */
 .topnav a {
     float: left;
-    color: #332d2d;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -98,5 +136,6 @@ h1 {
 #show-score {
     float: right;
     margin-right: 10%;
+    color: white;
 }
 

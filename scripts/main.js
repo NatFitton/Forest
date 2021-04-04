@@ -86,31 +86,31 @@ function getResult() {
     //use totalScore below this comment to determine which version of the forest we see
     if (localStorage.getItem("sleepKey") === null){
         //show forest-0.html
-        document.getElementById("forest-link").innerHTML = "<a href = 'forest-0.html' id = 'forest-0'>Click here to view your forest!</a>"
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-0.html' id = 'forest-0' class = 'forest-link'>Click here to enter your forest!</a>"
     } else if (totalScore === 0) {
          //show forest-0.html
-        document.getElementById("forest-link").innerHTML = "<a href = 'forest-0.html' id = 'forest-0'>Click here to view your forest!</a>"
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-0.html' id = 'forest-0' class = 'forest-link'>Click here to enter your forest!</a>"
     } else if (0 < totalScore && totalScore <= 22850){
         //show forest-1.html
-        document.getElementById("forest-link").innerHTML = "<a href = 'forest-1.html' id = 'forest-1'>Click here to view your forest!</a>"
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-1.html' id = 'forest-1' class = 'forest-link'>Click here to enter your forest!</a>"
     } else if (22851 <= totalScore && totalScore <= 45700){
         //show forest-2.html
-        document.getElementById("forest-link").innerHTML = "<a href = 'forest-2.html' id = 'forest-2'>Click here to view your forest!</a>"
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-2.html' id = 'forest-2' class = 'forest-link'>Click here to enter your forest!</a>"
     } else if (45701 <= totalScore && totalScore <= 68550){
         //show forest-3.html
-        document.getElementById("forest-link").innerHTML = "<a href = 'forest-3.html' id = 'forest-3'>Click here to view your forest!</a>"
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-3.html' id = 'forest-3' class = 'forest-link'>Click here to enter your forest!</a>"
     } else if (68551 <= totalScore && totalScore <= 91400){
         //show forest-4.html
-        document.getElementById("forest-link").innerHTML = "<a href = 'forest-4.html' id = 'forest-4'>Click here to view your forest!</a>"
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-4.html' id = 'forest-4' class = 'forest-link'>Click here to enter your forest!</a>"
     } else if (91401 <= totalScore && totalScore <= 114250){
         //show forest-5.html
-        document.getElementById("forest-link").innerHTML = "<a href = 'forest-5.html' id = 'forest-5'>Click here to view your forest!</a>"
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-5.html' id = 'forest-5' class = 'forest-link'>Click here to enter your forest!</a>"
     } else if (114251 <= totalScore && totalScore <= 137100){
         //show forest-6.html
-        document.getElementById("forest-link").innerHTML = "<a href = 'forest-6.html' id = 'forest-6'>Click here to view your forest!</a>"
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-6.html' id = 'forest-6' class = 'forest-link'>Click here to enter your forest!</a>"
     } else {
         //show forest-7.html
-        document.getElementById("forest-link").innerHTML = "<a href = 'forest-7.html' id = 'forest-7'>Click here to view your forest!</a>"
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-7.html' id = 'forest-7' class = 'forest-link'>Click here to enter your forest!</a>"
     };
 };
 
