@@ -33,7 +33,7 @@ h1 {
 /*https://wallpaperaccess.com/fairy-forest both backgrounds from here*/
 /*log in page - index.html*/
 #index-page {
-    background: url("../images/index-page-background.jpg");
+    background: url("../images/index-page-background.jpg") no-repeat center center fixed;
     background-size: cover;
     position: absolute;
     left: 0;
@@ -43,7 +43,7 @@ h1 {
 }
 /*input page - forest-gate-input.html*/
 #forest-gate {
-    background: url("../images/forest-background\(1\).jpg");
+    background: url("../images/forest-background\(1\).jpg") no-repeat center center fixed;
     background-size: cover;
     position: absolute;
     left: 0;
@@ -53,7 +53,7 @@ h1 {
 }
  /*actual forest - forest.html*/   
 #base-page {
-    background: url("../images/forest-background.jpg");
+    background: url("../images/foreststage0.png") no-repeat center center fixed;
     background-size: cover;
     position: absolute;
     left: 0;
