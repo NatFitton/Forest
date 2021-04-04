@@ -82,7 +82,7 @@ h1 {
 .container {
     position: absolute;
     margin: 20px;
-    width: auto;
+    width: 100%;
 }
 
 /* The navbar */
@@ -104,5 +104,11 @@ h1 {
 .topnav a:hover {
     background-color: rgb(211, 195, 195);
     color: black;
+}
+
+/*current score to be on the far right of nav bar*/
+#show-score {
+    float: right;
+    margin-right: 10%;
 }
 

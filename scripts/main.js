@@ -74,6 +74,7 @@ function getResult() {
     productivityScore = parseInt(localStorage.getItem("productivityKey"));
     //apply multiplier to score
     totalScore = ((stepScore) + (sleepScore * 60 * 15) + (productivityScore * 35));
+    localStorage.setItem("totalScore", totalScore);
     if (localStorage.getItem("sleepKey") === null) {   
         document.getElementById("check_javascript").innerHTML = "<ul><li>Sleep hours: 0</li><li>Steps taken: 0</li><li>Productivity minutes: 0</li><li>Total score: 0</li></ul>"; 
     } else {
@@ -124,9 +125,9 @@ function initialise(){
 	if (document.getElementById("actual-forest")){ //we are showing the forest, need the functions that get the scores and display
 		getResult();
         document.getElementById("reset").addEventListener("click", reset);
-	} else if (document.getElementById("feed-forest")){
-        document.getElementById("feed-forest").onclick=validate;
-    } 
+	} else if (document.getElementById("feed-forest")){ //forest progress input page
+        document.getElementById("feed-forest").onclick=validate; //ensure no empty values entered
+    };
 };
 
 window.onload = initialise;
