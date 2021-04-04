@@ -84,9 +84,12 @@ function getResult() {
     //160000 / 7 is roughly 22850 points to make seven stages of development
     //use totalScore below this comment to determine which version of the forest we see
     if (localStorage.getItem("sleepKey") === null){
-        //show forest-1.html
-        document.getElementById("forest-link").innerHTML = "<a href = 'forest-1.html' id = 'forest-1'>Click here to view your forest!</a>"
-    } else if (0 <= totalScore && totalScore <= 22850){
+        //show forest-0.html
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-0.html' id = 'forest-0'>Click here to view your forest!</a>"
+    } else if (totalScore === 0) {
+         //show forest-0.html
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-0.html' id = 'forest-0'>Click here to view your forest!</a>"
+    } else if (0 < totalScore && totalScore <= 22850){
         //show forest-1.html
         document.getElementById("forest-link").innerHTML = "<a href = 'forest-1.html' id = 'forest-1'>Click here to view your forest!</a>"
     } else if (22851 <= totalScore && totalScore <= 45700){
