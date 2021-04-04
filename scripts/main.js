@@ -14,19 +14,19 @@ function validate() {
     //verify there is a sleep value
     if (checkSleepEmpty === "")
     {
-    alert("Please input a Value");
+    alert("Please input how long you slept");
     return false;
     }
     //verify there is a steps value
     if (checkStepsEmpty === "")
     {
-    alert("Please input a Value");
+    alert("Please input how many steps");
     return false;
     }
     //verify there is a productivity value
     if (checkProductivityEmpty === "")
     {
-    alert("Please input a Value");
+    alert("Please input your productive minutes");
     return false;
     }
 };
@@ -74,12 +74,19 @@ function getResult() {
     productivityScore = parseInt(localStorage.getItem("productivityKey"));
     //apply multiplier to score
     totalScore = ((stepScore) + (sleepScore * 60 * 15) + (productivityScore * 35));
-    document.getElementById("check_javascript").innerHTML = "<ul><li>Sleep hours: " + localStorage.getItem("sleepKey") + "</li><li>Steps taken: " + localStorage.getItem("stepsKey") + "</li><li>Productivity minutes: " + localStorage.getItem("productivityKey") + "</li><li>Total score: " + totalScore + "</li></ul>";
-     //hard code weekly goal for now
+    if (localStorage.getItem("sleepKey") === null) {   
+        document.getElementById("check_javascript").innerHTML = "<ul><li>Sleep hours: 0</li><li>Steps taken: 0</li><li>Productivity minutes: 0</li><li>Total score: 0</li></ul>"; 
+    } else {
+        document.getElementById("check_javascript").innerHTML = "<ul><li>Sleep hours: " + localStorage.getItem("sleepKey") + "</li><li>Steps taken: " + localStorage.getItem("stepsKey") + "</li><li>Productivity minutes: " + localStorage.getItem("productivityKey") + "</li><li>Total score: " + totalScore + "</li></ul>";
+    };
+        //hard code weekly goal for now
     //160,000 points will mean a fully developed forest
     //160000 / 7 is roughly 22850 points to make seven stages of development
     //use totalScore below this comment to determine which version of the forest we see
-    if (0 <= totalScore && totalScore <= 22850){
+    if (localStorage.getItem("sleepKey") === null){
+        //show forest-1.html
+        document.getElementById("forest-link").innerHTML = "<a href = 'forest-1.html' id = 'forest-1'>Click here to view your forest!</a>"
+    } else if (0 <= totalScore && totalScore <= 22850){
         //show forest-1.html
         document.getElementById("forest-link").innerHTML = "<a href = 'forest-1.html' id = 'forest-1'>Click here to view your forest!</a>"
     } else if (22851 <= totalScore && totalScore <= 45700){
@@ -103,12 +110,19 @@ function getResult() {
     };
 };
 
+function reset(){
+    //to reset localStorage
+    localStorage.clear()
+    document.getElementById("check_javascript").innerHTML = "<ul><li>Sleep hours: 0</li><li>Steps taken: 0</li><li>Productivity minutes: 0</li><li>Total score: 0</li></ul>";
+};
+
 function initialise(){
 	if (document.getElementById("actual-forest")){ //we are showing the forest, need the functions that get the scores and display
 		getResult();
+        document.getElementById("reset").addEventListener("click", reset);
 	} else if (document.getElementById("feed-forest")){
-        document.getElementById("feed-forest").onclick.validate();
-    }
-}
+        document.getElementById("feed-forest").onclick=validate;
+    } 
+};
 
 window.onload = initialise;
