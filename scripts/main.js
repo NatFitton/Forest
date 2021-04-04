@@ -1,16 +1,16 @@
-function draw() {  
+function draw() {
     const canvas = document.getElementById('canvas');
     var ctx = canvas.getContext('2d');
     ctx.fillStyle = 'green';
     ctx.fillRect(10, 10, 150, 100);
-}; 
+};
 
 function validate() {
     //check all inputs are not empty
     var checkSleepEmpty = document.getElementById("sleep").value;
     var checkStepsEmpty = document.getElementById("steps").value;
     var checkProductivityEmpty = document.getElementById("productivity").value;
-    
+
     //verify there is a sleep value
     if (checkSleepEmpty === "")
     {
@@ -48,7 +48,7 @@ function inputData() {
         previousSleep = parseInt(localStorage.getItem("sleepKey"));
         previousSteps = parseInt(localStorage.getItem("stepsKey"));
         previousProductivity = parseInt(localStorage.getItem("productivityKey"));
-        //add new score 
+        //add new score
         newSleep = previousSleep + inpSleep
         newSteps = previousSteps + inpSteps
         newProductivity = previousProductivity + inpProductivity
@@ -67,15 +67,15 @@ function getResult() {
     //steps = steps score
     //sleep = sleep score * 60 * 15
     //study = study * 35
-    //add the scoring logic here to access certain images and innerHTML them to the forest page? 
+    //add the scoring logic here to access certain images and innerHTML them to the forest page?
     //get count from the local storage
     sleepScore = parseInt(localStorage.getItem("sleepKey"));
     stepScore = parseInt(localStorage.getItem("stepsKey"));
     productivityScore = parseInt(localStorage.getItem("productivityKey"));
     //apply multiplier to score
     totalScore = ((stepScore) + (sleepScore * 60 * 15) + (productivityScore * 35));
-    document.getElementById("check_javascript").innerHTML = "<ul><li>Current sleep hours:" + localStorage.getItem("sleepKey") + "</li><li>Current steps taken:" + localStorage.getItem("stepsKey") + "</li><li>Current productivity minutes:" + localStorage.getItem("productivityKey") + "</li><li>Current Score: " + totalScore + "</li></ul>";
-     //hard code weekly goal for now 
+    document.getElementById("check_javascript").innerHTML = "<ul><li>Sleep hours: " + localStorage.getItem("sleepKey") + "</li><li>Steps taken: " + localStorage.getItem("stepsKey") + "</li><li>Productivity minutes: " + localStorage.getItem("productivityKey") + "</li><li>Total score: " + totalScore + "</li></ul>";
+     //hard code weekly goal for now
     //160,000 points will mean a fully developed forest
     //160000 / 7 is roughly 22850 points to make seven stages of development
     //use totalScore below this comment to determine which version of the forest we see
